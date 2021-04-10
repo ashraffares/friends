@@ -1,8 +1,8 @@
 <h1>Friends</h1>
 
-<table class='table table-striped table-hover'>
-  <thead>
-    <tr class='table-dark'>
+<table class='table'>
+  <thead class='table-dark'>
+    <tr>
       <th>First name</th>
       <th>Last name</th>
       <th>Email</th>
@@ -13,7 +13,7 @@
     </tr>
   </thead>
 
-  <tbody>
+  <tbody class='table-striped table-hover'>
     <% @friends.each do |friend| %>
       <tr>
         <td><%= friend.first_name %></td>
