@@ -1,3 +1,4 @@
+<%if user_signed_in?%>
 <h1>Friends</h1>
 
 <table class='table'>
@@ -35,3 +36,7 @@
 <br>
 
 <%= link_to 'New Friend', new_friend_path,class:'btn btn-primary text-white' %>
+<%else%>
+  <h3>Welcome to friends list app</h3>
+  <p>sign in to make your list</p>
+<%end%>
