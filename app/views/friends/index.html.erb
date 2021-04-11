@@ -17,13 +17,11 @@
     <% @friends.each do |friend| %>
       <tr>
       <% if friend.user.id == current_user.id%>
-        <td><%= friend.first_name %>
-        <%= friend.last_name %></td>
+      <td><%= link_to friend.first_name + ' ' + friend.last_name, friend %></td>
         <td><%= friend.email %></td>
         <td><%= friend.phone %></td>
         <td><%= friend.twitter %></td>
         <td><%= friend.user_id %></td>
-        <td><%= link_to 'Show', friend %></td>
         <td><%= link_to 'Edit', edit_friend_path(friend) %></td>
         <td><%= link_to 'Destroy', friend, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <% end %>
