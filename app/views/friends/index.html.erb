@@ -1,7 +1,7 @@
 <%if user_signed_in?%>
 <h1>Friends</h1>
 
-<table class='table'>
+<table class='table  table-striped table-hover table-bordered'>
   <thead class='table-dark'>
     <tr>
       <th>Name</th>
@@ -9,11 +9,11 @@
       <th>Phone</th>
       <th>Twitter</th>
       <th>User</th>
-      <th colspan="3"></th>
+      <th></th>
     </tr>
   </thead>
 
-  <tbody class='table-striped table-hover'>
+  <tbody>
     <% @friends.each do |friend| %>
       <tr>
       <% if friend.user.id == current_user.id%>
@@ -22,8 +22,7 @@
         <td><%= friend.phone %></td>
         <td><%= friend.twitter %></td>
         <td><%= friend.user_id %></td>
-        <td><%= link_to 'Edit', edit_friend_path(friend) %></td>
-        <td><%= link_to 'Destroy', friend, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'delete', friend, method: :delete, data: { confirm: 'Are you sure?' },class:'btn btn-outline-danger btn-sm' %></td>
       <% end %>
       </tr>
     <% end %>
