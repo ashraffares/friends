@@ -1,0 +1,29 @@
+<div class="card">
+  <div class="card-body">
+        <p>
+      <strong>Name:</strong>
+      <%= @friend.first_name %>
+      <%= @friend.last_name %>
+    </p>
+    <p>
+      <strong>Email:</strong>
+      <%= @friend.email %>
+    </p>
+
+    <p>
+      <strong>Phone:</strong>
+      <%= @friend.phone %>
+    </p>
+
+    <p>
+      <strong>Twitter:</strong>
+      <%= @friend.twitter %>
+    </p>
+    <%= link_to 'Edit', edit_friend_path(@friend),class:'btn btn-secondary btn-sm' %> 
+    <%= link_to 'Back', friends_path,class:'btn btn-secondary btn-sm' %>
+    
+  </div>
+</div>
+
+<br/>
+<%= link_to 'delete', @friend, method: :delete, data: { confirm: 'Are you sure?' },class:'btn btn-danger btn-sm mt-2' %>
